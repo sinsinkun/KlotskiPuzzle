@@ -1,0 +1,129 @@
+body {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.bg-container {
+    background-color: rgb(100,100,100);
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 5px auto;
+}
+
+@media (max-width: 650px) {
+    .bg-container {
+        width: 100%;
+        margin: 0 0;
+    }
+}
+
+.header {
+    background-color: rgb(219, 215, 241);
+    width: 95%;
+    margin: 10px 0px;
+}
+
+#win-display {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.puzzle-container {
+    position: relative;
+    width: 425px;
+    height: 570px;
+}
+
+.puzzle-bg {
+    background-color: rgb(140, 140, 140);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    padding: 5px 5px;
+    position: absolute;
+}
+
+.puzzle-grid {
+    background-color: rgb(160, 160, 160);
+    height: 100px;
+    width: 100px
+}
+
+
+.puzzle-container .exit {
+    background-color: rgb(140, 140, 140);
+    color: white;
+    font-size: 10pt;
+    font-weight: 800;
+    height:18px;
+    width: 215px;
+    top: 530px;
+    left: 105px;
+    z-index: 1;
+    position: absolute;
+    user-select: none;
+}
+
+#control-layer {
+    z-index: 2;
+    position: absolute;
+    width: 425px;
+    height: 530px;
+}
+
+
+.puzzle-container #red {
+    background-color: rgb(228, 50, 50);
+    height: 201px;
+    width: 201px;
+    margin: 5px 5px;
+    border: 2px solid black;
+    position: absolute;
+}
+
+.puzzle-container #red:active {
+    background-color: rgb(255, 88, 88);
+}
+
+.puzzle-container .long {
+    background-color: rgb(153, 107, 8);
+    height: 201px;
+    width: 96px;
+    margin: 5px 5px;
+    border: 2px solid black;
+    position: absolute;
+}
+
+.puzzle-container .long:active {
+    background-color: rgb(190, 137, 22);
+}
+
+.puzzle-container .wide {
+    background-color: rgb(153, 107, 8);
+    height: 96px;
+    width: 201px;
+    margin: 5px 5px;
+    border: 2px solid black;
+    position: absolute;
+}
+
+.puzzle-container .wide:active {
+    background-color: rgb(190, 137, 22);
+}
+
+.puzzle-container .square {
+    background-color: rgb(153, 107, 8);
+    height: 96px;
+    width: 96px;
+    margin: 5px 5px;
+    border: 2px solid black;
+    position: absolute;
+}
+
+.puzzle-container .square:active {
+    background-color: rgb(190, 137, 22);
+}
