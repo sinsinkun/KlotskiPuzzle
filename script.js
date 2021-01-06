@@ -98,13 +98,16 @@ function isNoOverlap(name,type,newx,newy) {
         if (name != pieceList[i].name) {
             //check if current piece position conflicts with existing pieces
             if (newx === pieceList[i].x && newy === pieceList[i].y) return false;
-            if (newx === pieceList[i].x + 105 && newy === pieceList[i].y && pieceList[i].type === "wide") return false;
-            if (newx === pieceList[i].x && newy === pieceList[i].y + 105 && pieceList[i].type === "long") return false;
-            if (newx === pieceList[i].x + 105 && newy === pieceList[i].y + 105 && pieceList[i].type === "red") return false;
-            //check if existing piece positions conflict with current piece
-            if ((type === "long" || type === "red") && newx === pieceList[i].x && newy === pieceList[i].y - 105) return false;
-            if ((type === "wide" || type === "red") && newx === pieceList[i].x - 105 && newy === pieceList[i].y) return false;
-            if (type === "red" && newx === pieceList[i].x - 105 && newy === pieceList[i].y - 105) return false;
+            if (newx === pieceList[i].x+105 && newy === pieceList[i].y && (pieceList[i].type === "wide" || pieceList[i].type === "red")) return false;
+            if (newx === pieceList[i].x && newy === pieceList[i].y+105 && (pieceList[i].type === "long" || pieceList[i].type === "red")) return false;
+            if (newx === pieceList[i].x+105 && newy === pieceList[i].y+105 && pieceList[i].type === "red") return false;
+            //check reverse
+            if ((type === "long" || type === "red") && newx === pieceList[i].x && newy === pieceList[i].y-105) return false;
+            if ((type === "wide" || type === "red") && newx === pieceList[i].x-105 && newy === pieceList[i].y) return false;
+            if (type === "red" && newx === pieceList[i].x-105 && newy === pieceList[i].y-105) return false;
+            //check long + wide combination
+            if ((type === "long" || type === "red") && (pieceList[i].type === "wide" || pieceList[i].type === "red") && newx === pieceList[i].x+105 && newy === pieceList[i].y-105) return false;
+            if ((type === "wide" || type === "red") && (pieceList[i].type === "long" || pieceList[i].type === "red") && newx === pieceList[i].x-105 && newy === pieceList[i].y+105) return false;
         }
     }
 
